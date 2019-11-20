@@ -27,7 +27,11 @@ ARTICLES = [
 #########################
 
 def format_campus_location(campus)
+<<<<<<< HEAD
   puts "Flatiron #{campus[:name]}"
+=======
+  "Flatiron #{campus["name"]}"
+>>>>>>> 68ba7f5fd6c06fdef1177a3db62e8716db0ee26b
 end
 
 def format_subject
@@ -68,9 +72,12 @@ end
 def print_many_articles(articles)
   # Write a method that will take in an array of article hashes
   # and format each one using the print_one_article method
+<<<<<<< HEAD
   articles.each do |article|
     print_one_article(article)
   end
+=======
+>>>>>>> 68ba7f5fd6c06fdef1177a3db62e8716db0ee26b
 end
 
 def format_footer(campus)

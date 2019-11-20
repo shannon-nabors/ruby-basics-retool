@@ -23,8 +23,9 @@ These should be completed in order - each step builds on the previous steps. See
 1. Fix the errors in `newsletter.rb` so that it runs without errors
 2. Fix the `format_campus_location` method so that it has the correct output
 3. Write the `calculate_recipients` method to return only the recipients that haven't unsubscribed
-4. Write the body of `print_one_article` to print a string with the formatted article
-5. Write the `print_many_articles` method to print all the articles
+4. Write the `print_recipients` method to print a string with a list of the correct recipients
+5. Write the body of `print_one_article` to print a string with the formatted article
+6. Write the `print_many_articles` method to print all the articles
 7. Run your code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 Feel free to use any debugging tools you've learned in order to solve the challenge. Remember, you may need to add additional code to `newsletter.rb` in order to use tools like `binding.pry`.
@@ -57,11 +58,17 @@ SUBJECT: Flatiron DC Newsletter - Nov 20, 2019
 
 When people subscribe to the newsletter, they are added to `SUBSCRIBED`. When people unsubscribe from the newsletter, they are added to `UNSUBSCRIBED`. We need to avoid sending the newsletter to anyone who has unsubscribed. `calculate_recipients` should return an array. None of the emails in the `UNSUBSCRIBED` array should appear in the results array returned.
 
-You can check if your version is working by looking at the output -`cedricschmidt@robel.io` should be gone from the beginning, and the last recipient should be `bryant@cummingsfisher.biz`.
+You can check if your version is working by looking at the output -`cedricschmidt@robel.io` should be gone from the beginning, and the last recipient should be `bryant@cummingsfisher.biz`. You may need to use debugging tools to check the output, since this method should not print anything.
 
 Your `calculate_recipients` method should return a new array - it should not change the `SUBSCRIBERS` array.
 
-### 4. Write the body of `print_one_article` to print a string with the formatted article
+### 4. Write the `print_recipients` method to print a string with a list of the correct recipients
+
+We want our "RECIPIENTS: " line to include a list of the email addresses of the newsletter's recipients, separated by commas. Use the `calculate_recipients` method to get the correct email addresses, then print and format them in this method.
+
+At this point, you can check your output for the "RECIPIENTS: " line against the `sample_output.txt` file.
+
+### 5. Write the body of `print_one_article` to print a string with the formatted article
 
 Each article has an author, title, and text. Fill in the `print_one_article` method to print the article as a formatted string. It should look like
 
@@ -73,11 +80,13 @@ The orthogonal features, when combined, can explode into complexity.
 
 The title comes first. On the next line is the byline. On the following line is the text of the article.
 
-When your method is working right, you should see the `Mining` article above in the output of `ruby newsletter.rb`.
+You may need to write out the `print_many_articles` method in order to ascertain that your output is formatted correctly.
 
-### 5. Write the `print_many_articles` method to print all the articles
+### 6. Write the `print_many_articles` method to print all the articles
 
 The `print_many_articles` should print all the articles passed into the method.  It should use the `print_one_article` to print each article.
+
+### 7. Run your code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 At this point, your output should match the output in `sample_output.txt`
 

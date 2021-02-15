@@ -25,6 +25,14 @@ ARTICLES = [
 # Methods to generate the newsletter
 #########################
 
+def format_campus_location(campus)
+  "Flatiron #{campus["name"]}"
+end
+
+def format_subject
+  puts "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n\n"
+end
+
 def calculate_recipients
   # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
   # write a method that will return an array of only the subscribers who haven't unsubscribed
@@ -49,14 +57,6 @@ end
 def print_many_articles(articles)
   # Write a method that will take in an array of article hashes
   # and format each one using the print_one_article method
-end
-
-def format_campus_location(campus)
-  "Flatiron #{campus["name"]}"
-end
-
-def format_subject
-  puts "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n\n"
 end
 
 def format_footer(campus)
